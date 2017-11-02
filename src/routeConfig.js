@@ -5,9 +5,8 @@ import Article from "./components/Article.vue"
 import Music from "./components/Music.vue"
 export default[
     {
-        path:'/home',
-        component:Home,
-        meta: {keepAlive: false}
+      path:'/home',
+      component:Home
     },
     {
       path:'/user',
@@ -15,8 +14,7 @@ export default[
     },
     {
       path:'/column',
-      component:Column,
-      meta: {keepAlive: false}
+      component:Column
     },
     {
       path:'/:tp/article/:id',

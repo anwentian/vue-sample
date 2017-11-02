@@ -23,27 +23,27 @@ export default {
     "show" 
   ]),
   methods:mapActions({
-    
+   
   }),
   mounted(){
-			var path=this.$route.path.substring(1);
-			this.showToggle(path);
-		},
+    var path=this.$route.path.substring(1);
+    this.showToggle(path);
+  },
   watch:{
-			$route(to){
-				var path=to.path.substring(1);   
-				this.showToggle(path);       
-			}
-		},
+    $route(to){
+      var path=to.path.substring(1);   
+      this.showToggle(path);       
+    }
+  },
   methods:{
-			showToggle(path){
-				if(path.indexOf('article')!=-1||path.indexOf('music')!=-1){
-					this.$store.dispatch('hideIt')
-				}else{
-					this.$store.dispatch('showIt')
-				}
-			}
-		},
+    showToggle(path){
+        if(path.indexOf('article')!=-1||path.indexOf('music')!=-1){
+          this.$store.dispatch('hideIt')
+        }else{
+          this.$store.dispatch('showIt')
+        }
+      }
+    },
   components :{
     Article,
     Header,
