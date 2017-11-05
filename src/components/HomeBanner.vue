@@ -25,7 +25,7 @@ import Slider from '../assets/js/slider.js'
 export default {
     
     mounted(){      
-        new slider(); 
+        new Slider(); 
     }
 }
 </script>
