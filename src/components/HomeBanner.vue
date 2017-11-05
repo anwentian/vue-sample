@@ -21,18 +21,11 @@
     </div>
 </template>
 <script>
-import Carousel from '../assets/js/carousel.js' 
+import Slider from '../assets/js/slider.js' 
 export default {
     
-    mounted(){
-       
-        new Carousel({
-            banner:"banner",
-            len:3,
-            width:320,
-            interval:4000
-        }) 
-
+    mounted(){      
+        new slider(); 
     }
 }
 </script>
