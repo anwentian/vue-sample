@@ -23,9 +23,21 @@
 <script>
 import Slider from '../assets/js/slider.js' 
 export default {
-    
+    data(){
+        return {slider:null}
+    },
+    methods:{
+        clearTimer(){
+            clearTimeout(this.slider.timer);
+            return;
+        }
+    },
     mounted(){      
-        new Slider(); 
+        this.slider = new Slider(); 
+    },
+    destroyed(){
+        this.clearTimer();
     }
+
 }
 </script>
