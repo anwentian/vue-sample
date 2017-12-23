@@ -1,7 +1,9 @@
 <template>
     <div class="warp" >
         <HomeBanner></HomeBanner>
-        <News></News>     
+        <keep-alive>
+          <News></News> 
+        </keep-alive>  
     </div>
 </template>
 

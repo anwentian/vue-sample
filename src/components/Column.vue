@@ -1,8 +1,6 @@
 <template>
     <div class="warp" >       
-        <div  id="column-banner">                                  
-            <img src="src/assets/images/BobDylan.jpg"/>                                               
-        </div>
+        <ColumnBanner></ColumnBanner>
         <div id="songs-list">
             <router-link  v-for="(item,index) in musicList" tag="div" :to="'/'+item.type+'/music/'+index" class = "news-list-item" >
                 <div class="news-list-mian">
