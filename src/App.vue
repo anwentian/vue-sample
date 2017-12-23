@@ -1,11 +1,7 @@
 <template>
-  <div id="app">
-  
-    <Header v-show="show"></Header>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
-
+  <div id="app"> 
+    <Header v-show="show"></Header>   
+    <router-view></router-view>
     <Me></Me>
     <Footer v-show="show"></Footer>   
   </div>
