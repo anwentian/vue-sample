@@ -1,7 +1,8 @@
 export default function Slider(options){
-    this.default ={banner: "banner", width: 320,minDis:50 };
+    this.default ={banner: "banner", width: 320,minDis:50,isAutoPlay:true };
     this._options = extend(this.default,options);
     this.banner =  document.getElementById(this._options.banner);
+    this.isAutoPlay = this._options.isAutoPlay;
     this.carosel = this.banner.getElementsByClassName('carousel-list')[0]
     this.indicators =  this.banner.getElementsByClassName('carousel-generic');
     this.carouselItem = this.carosel.getElementsByClassName('carousel-item');
@@ -13,13 +14,16 @@ export default function Slider(options){
     this.currentX = 0;
     this.endX=0;
     this.dis=0;
+    this.i = 0;
      
     this.current =0;
     this.target = 0;
     
     this.initial();
     this.indicatorHandle();
-    this.autoPlay();
+    if(this.isAutoPlay){
+        this.autoPlay();
+    }  
     this.touchEvent();
 }
 
@@ -33,7 +37,7 @@ Slider.prototype.initial = function(){
 }
 
 Slider.prototype.autoPlay = function(){
-    
+    console.log(this.i++);
     clearTimeout(this.timer);
     let transform = "translate3d("+-320*this.target+"px, 0px,0px)";
     this.current = this.target;
@@ -97,7 +101,6 @@ Slider.prototype.indicatorHandle = function(){
     
     clearTimeout(this.timer)
     var _this = this;
-    console.log(this.indicators);
     for (let i = 0;i<this.itemsCount;i++) {     
         this.indicators[i].addEventListener("click",function(){          
             _this.current=i;
